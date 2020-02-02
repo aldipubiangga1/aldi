@@ -1,0 +1,52 @@
+package com.company;
+
+public class player {
+    String nama;
+    int hp,lvl,xp;
+
+    public void mulai(){
+        System.out.println("Memulai Petualangan");
+    }
+    
+    public void luka(){
+        System.out.println("kamu terkena duri");
+        System.out.println("DARAH ANDA BERKURANG 25 POINT!") ;
+    }
+    
+    public void enemie(){
+        System.out.println("musuh muncul");
+        System.out.println("musuh menyerang darahmu berkurang 10 point");
+        System.out.println("musuh berhasil dikalahkan kamu mendapat 50 XP");
+        
+    }
+
+    public void dead(){
+        if(this.hp <= 0){
+            System.out.println("Kamu tewas petualanganmu berakhir!!");
+        }else{
+            System.out.println("Melanjutkan petualangan");
+        }
+    }
+    public void lvlup(){
+        if(this.xp == 100){
+            System.out.println("LVL UP!");
+        }else{
+            System.out.println("XP anda belum cukup") ;
+        }
+    }
+
+    public static void main(String args[]) {
+	player wizard = new player();
+	wizard.nama = "kangsomay";
+	wizard.hp = 50;wizard.lvl =1;wizard.xp =0;
+
+	wizard.mulai();
+        wizard.luka();wizard.hp=25;
+        wizard.dead();
+        wizard.enemie();wizard.hp=15;wizard.xp=50;
+        wizard.dead();
+        wizard.enemie();wizard.hp=5;wizard.xp=100;
+        wizard.lvlup();wizard.lvl=2;
+        wizard.luka();wizard.hp=0;
+        wizard.dead();
+    }}
